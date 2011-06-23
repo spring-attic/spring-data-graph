@@ -85,6 +85,15 @@ public class DataGraphNamespaceHandler extends NamespaceHandlerSupport {
                 return StringUtils.hasText(contextRef) ? contextRef : DataGraphRepositoryConfiguration.DEFAULT_GRAPH_DATABASE_CONTEXT_REF;
             }
 
+            /*
+             * (non-Javadoc)
+             * @see org.springframework.data.repository.config.CommonRepositoryConfigInformation#getNamedQueriesLocation()
+             */
+            @Override
+            public String getNamedQueriesLocation() {
+                return "classpath:META-INF/neo4j-named-queries.properties";
+            }
+
             private static class ManualDataGraphRepositoryConfiguration extends ManualRepositoryConfigInformation<SimpleDataGraphRepositoryConfiguration> implements DataGraphRepositoryConfiguration {
 
                 public ManualDataGraphRepositoryConfiguration(Element element, SimpleDataGraphRepositoryConfiguration parent) {

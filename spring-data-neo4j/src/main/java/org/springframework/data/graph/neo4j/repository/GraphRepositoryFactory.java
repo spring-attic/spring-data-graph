@@ -26,6 +26,7 @@ import org.springframework.data.graph.neo4j.support.GenericTypeExtractor;
 import org.springframework.data.graph.neo4j.support.GraphDatabaseContext;
 import org.springframework.data.graph.neo4j.support.query.QueryExecutor;
 import org.springframework.data.repository.core.EntityInformation;
+import org.springframework.data.repository.core.NamedQueries;
 import org.springframework.data.repository.core.RepositoryMetadata;
 import org.springframework.data.repository.core.support.RepositoryFactorySupport;
 import org.springframework.data.repository.query.QueryLookupStrategy;
@@ -105,7 +106,7 @@ public class GraphRepositoryFactory extends RepositoryFactorySupport {
         return new QueryLookupStrategy() {
 
             @Override
-            public RepositoryQuery resolveQuery(final Method method, final RepositoryMetadata metadata) {
+            public RepositoryQuery resolveQuery(final Method method, final RepositoryMetadata metadata, final NamedQueries namedQueries) {
                 final GraphQuery queryAnnotation = method.getAnnotation(GraphQuery.class);
                 if (queryAnnotation==null) return null;
                 return new QueryAnnotationRepositoryQuery(queryAnnotation, method, metadata, graphDatabaseContext);
