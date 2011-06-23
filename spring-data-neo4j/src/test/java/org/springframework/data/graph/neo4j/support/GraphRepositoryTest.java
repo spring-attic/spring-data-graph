@@ -138,7 +138,7 @@ public class GraphRepositoryTest {
         Person p1 = persistedPerson("Michael", 35);
         Person p2 = persistedPerson("David", 27);
         Friendship friendship = p1.knows(p2);
-        assertEquals("Wrong friendship count.", 1L, (long) friendshipRepository.count());
+        assertEquals("Wrong friendship count.", 1L, friendshipRepository.count());
         assertEquals(friendship, friendshipRepository.findOne(friendship.getRelationshipId()));
         assertEquals("Did not find friendship.", Collections.singleton(friendship), new HashSet<Friendship>(IteratorUtil.asCollection(friendshipRepository.findAll())));
     }
@@ -162,9 +162,9 @@ public class GraphRepositoryTest {
     @Test
     @Transactional
     public void testFinderCount() {
-        assertEquals((Long)0L, personRepository.count());
+        assertEquals(0L, personRepository.count());
         Person p = persistedPerson("Michael", 35);
-        assertEquals((Long)1L, personRepository.count());
+        assertEquals(1L, personRepository.count());
     }
 
     @Test
