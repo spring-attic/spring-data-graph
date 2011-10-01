@@ -29,7 +29,7 @@ import java.util.Set;
  * @author Michael Hunger
  * @since 11.09.2010
  */
-public abstract class AbstractNodeRelationshipFieldAccessor<ENTITY extends GraphBacked,STATE extends PropertyContainer,TARGET extends GraphBacked,TSTATE extends PropertyContainer> implements FieldAccessor<ENTITY> {
+public abstract class AbstractNodeRelationshipFieldAccessor<ENTITY extends GraphBacked<STATE>,STATE extends PropertyContainer,TARGET extends GraphBacked<TSTATE>,TSTATE extends PropertyContainer> implements FieldAccessor<ENTITY> {
     protected final RelationshipType type;
     protected final Neo4JPersistentProperty property;
     protected final Direction direction;

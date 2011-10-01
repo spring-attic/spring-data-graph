@@ -164,7 +164,6 @@ public class ModificationOutsideOfTransactionTest
         assertEquals( 35, nodeFor( p ).getProperty("age") );
     }
 
-	@Ignore
 	@Test
     public void shouldWorkWithUninitializedCollectionFieldWithoutUnderlyingState()
     {
