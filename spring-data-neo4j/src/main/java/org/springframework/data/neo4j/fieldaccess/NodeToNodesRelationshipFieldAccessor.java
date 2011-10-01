@@ -33,7 +33,7 @@ import java.util.Set;
  * @author Michael Hunger
  * @since 12.09.2010
  */
-public abstract class NodeToNodesRelationshipFieldAccessor<TARGET extends GraphBacked> extends AbstractNodeRelationshipFieldAccessor<NodeBacked, Node, TARGET, Node> {
+public abstract class NodeToNodesRelationshipFieldAccessor<T extends NodeBacked, TARGET extends NodeBacked> extends AbstractNodeRelationshipFieldAccessor<T, Node, TARGET, Node> {
     public NodeToNodesRelationshipFieldAccessor(final Class<? extends TARGET> clazz, final GraphDatabaseContext graphDatabaseContext, final Direction direction, final RelationshipType type, Neo4JPersistentProperty property) {
         super(clazz, graphDatabaseContext, direction, type,property);
     }

@@ -16,6 +16,12 @@
 
 package org.springframework.data.neo4j.fieldaccess;
 
+import static org.springframework.data.neo4j.support.DoReturn.doReturn;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.RelationshipType;
@@ -24,12 +30,7 @@ import org.springframework.data.neo4j.mapping.Neo4JPersistentProperty;
 import org.springframework.data.neo4j.mapping.RelationshipInfo;
 import org.springframework.data.neo4j.support.GraphDatabaseContext;
 
-import java.util.Collections;
-import java.util.Set;
-
-import static org.springframework.data.neo4j.support.DoReturn.doReturn;
-
-public class OneToNRelationshipFieldAccessorFactory extends NodeRelationshipFieldAccessorFactory {
+public class OneToNRelationshipFieldAccessorFactory<T extends NodeBacked, TARGET extends NodeBacked> extends NodeRelationshipFieldAccessorFactory<T, TARGET> {
 	
 	public OneToNRelationshipFieldAccessorFactory(GraphDatabaseContext graphDatabaseContext) {
 		super(graphDatabaseContext);
@@ -43,19 +44,20 @@ public class OneToNRelationshipFieldAccessorFactory extends NodeRelationshipFiel
     }
 
     @Override
-	public FieldAccessor<NodeBacked> forField(final Neo4JPersistentProperty property) {
+	public FieldAccessor<T> forField(final Neo4JPersistentProperty property) {
         final RelationshipInfo relationshipInfo = property.getRelationshipInfo();
-        final Class<? extends NodeBacked> targetType = (Class<? extends NodeBacked>) relationshipInfo.getTargetType().getType();
-        return new OneToNRelationshipFieldAccessor(relationshipInfo.getRelationshipType(), relationshipInfo.getDirection(), targetType, graphDatabaseContext,property);
+        final Class<TARGET> targetType = (Class<TARGET>) relationshipInfo.getTargetType().getType();
+        return new OneToNRelationshipFieldAccessor<T, TARGET>(relationshipInfo.getRelationshipType(), relationshipInfo.getDirection(), targetType, graphDatabaseContext,property);
 	}
 
-	public static class OneToNRelationshipFieldAccessor extends NodeToNodesRelationshipFieldAccessor<NodeBacked> {
+	public static class OneToNRelationshipFieldAccessor<T extends NodeBacked, TARGET extends NodeBacked> extends NodeToNodesRelationshipFieldAccessor<T, TARGET> {
 
-	    public OneToNRelationshipFieldAccessor(final RelationshipType type, final Direction direction, final Class<? extends NodeBacked> elementClass, final GraphDatabaseContext graphDatabaseContext, Neo4JPersistentProperty property) {
+	    public OneToNRelationshipFieldAccessor(final RelationshipType type, final Direction direction, final Class<TARGET> elementClass, final GraphDatabaseContext graphDatabaseContext, Neo4JPersistentProperty property) {
 	        super(elementClass, graphDatabaseContext, direction, type,property);
 	    }
 
-	    public Object setValue(final NodeBacked entity, final Object newVal) {
+	    @Override
+		public Object setValue(final T entity, final Object newVal) {
 	        final Node node = checkUnderlyingNode(entity);
 	        if (newVal == null) {
 	            removeMissingRelationships(node, Collections.<Node>emptySet());
@@ -64,15 +66,19 @@ public class OneToNRelationshipFieldAccessorFactory extends NodeRelationshipFiel
 	        final Set<Node> targetNodes = checkTargetIsSetOfNodebacked(newVal);
 	        removeMissingRelationships(node, targetNodes);
 	        createAddedRelationships(node, targetNodes);
-	        return createManagedSet(entity, (Set<NodeBacked>) newVal);
+	        return createManagedSet(entity, (Set<TARGET>) newVal);
 	    }
 
 	    @Override
-	    public Object getValue(final NodeBacked entity) {
+	    public Object getValue(final T entity) {
 	        checkUnderlyingNode(entity);
-	        final Set<NodeBacked> result = createEntitySetFromRelationshipEndNodes(entity);
+	        final Set<TARGET> result = createEntitySetFromRelationshipEndNodes(entity);
 	        return doReturn(createManagedSet(entity, result));
 	    }
 
+	    @Override
+		public Object getDefaultImplementation() {
+	        return new HashSet<TARGET>();
+		}
 	}
 }
