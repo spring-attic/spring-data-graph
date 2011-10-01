@@ -22,6 +22,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.FieldSignature;
 import org.neo4j.graphdb.DynamicRelationshipType;
 import org.neo4j.graphdb.Path;
+import org.neo4j.graphdb.PropertyContainer;
 import org.neo4j.helpers.collection.IterableWrapper;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
@@ -37,9 +38,11 @@ import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.annotation.RelatedToVia;
 import org.springframework.data.neo4j.annotation.GraphTraversal;
 
+import org.springframework.data.neo4j.core.GraphBacked;
 import org.springframework.data.neo4j.core.NodeBacked;
 import org.springframework.data.neo4j.core.RelationshipBacked;
 import org.springframework.data.neo4j.support.DoReturn;
+import org.springframework.data.neo4j.support.GraphBackedEntityIterableWrapper;
 import org.springframework.data.neo4j.core.EntityPath;
 import org.springframework.data.neo4j.core.EntityState;
 import org.springframework.data.neo4j.support.GraphDatabaseContext;
@@ -182,7 +185,7 @@ public aspect Neo4jNodeBacking { // extends AbstractTypeAnnotatingMixinFields<No
 		return getPersistentState().getId();
 	}
 
-    public  <T> Iterable<T> NodeBacked.findAllByTraversal(final Class<T> targetType, TraversalDescription traversalDescription) {
+    public  <STATE extends PropertyContainer, T extends GraphBacked<STATE>> Iterable<T> NodeBacked.findAllByTraversal(final Class<T> targetType, TraversalDescription traversalDescription) {
         if (!hasPersistentState()) throw new IllegalStateException("No node attached to " + this);
         final Traverser traverser = traversalDescription.traverse(this.getPersistentState());
         if (Node.class.isAssignableFrom(targetType)) return (Iterable<T>) traverser.nodes();
@@ -191,23 +194,14 @@ public aspect Neo4jNodeBacking { // extends AbstractTypeAnnotatingMixinFields<No
         return (Iterable<T>)Neo4jNodeBacking.aspectOf().convertToGraphEntity(traverser,targetType);
     }
 
-    private Iterable<?> convertToGraphEntity(Traverser traverser, final Class<?> targetType) {
+    private <STATE extends PropertyContainer, E extends GraphBacked<STATE>> Iterable<E> convertToGraphEntity(Traverser traverser, final Class<E> targetType) {
         final GraphDatabaseContext ctx = Neo4jNodeBacking.aspectOf().graphDatabaseContext;
+        // Why are the casts for the targetType and for the returned Iterable needed?
         if (NodeBacked.class.isAssignableFrom(targetType)) {
-            return new IterableWrapper<Object,Node>(traverser.nodes()) {
-                @Override
-                protected Object underlyingObjectToObject(Node node) {
-                    return ctx.createEntityFromState(node,(Class<? extends NodeBacked>)targetType);
-                }
-            };
+            return (Iterable<E>) GraphBackedEntityIterableWrapper.create(traverser.nodes(), (Class<? extends NodeBacked>)targetType, ctx);
         }
         if (RelationshipBacked.class.isAssignableFrom(targetType)) {
-            return new IterableWrapper<Object,Relationship>(traverser.relationships()) {
-                @Override
-                protected Object underlyingObjectToObject(Relationship relationship) {
-                    return ctx.createEntityFromState(relationship,(Class<? extends RelationshipBacked>)targetType);
-                }
-            };
+        	return (Iterable<E>) GraphBackedEntityIterableWrapper.create(traverser.relationships(), (Class<? extends RelationshipBacked>)targetType, ctx);
         }
         throw new IllegalStateException("Can't determine valid type for traversal target "+targetType);
 
