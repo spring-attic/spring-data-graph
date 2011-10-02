@@ -26,13 +26,12 @@ import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 class HasRelationshipMatcher extends TypeSafeMatcher<Node>
 {
     private final String relationshipTypeName;
-    private Node other;
+    private final Node other;
     private Iterable<Relationship> relationships;
 
     HasRelationshipMatcher( String relationshipTypeName, Node other )
@@ -44,9 +43,9 @@ class HasRelationshipMatcher extends TypeSafeMatcher<Node>
     @Override
     public boolean matchesSafely( Node item )
     {
-        relationships = item.getRelationships();
+        relationships = getRelationships(item);
 
-        if (other==null) return getRelationships( item ).hasNext();
+        if (other==null) return relationships.iterator().hasNext();
 
         for (Relationship relationship : relationships) {
             if (relationship.getOtherNode(item).equals(other)) {
@@ -56,9 +55,9 @@ class HasRelationshipMatcher extends TypeSafeMatcher<Node>
         return false;
     }
 
-    public Iterator<Relationship> getRelationships( Node node )
+    public Iterable<Relationship> getRelationships( Node node )
     {
-        return node.getRelationships( DynamicRelationshipType.withName( relationshipTypeName ) ).iterator();
+        return node.getRelationships( DynamicRelationshipType.withName( relationshipTypeName ));
     }
 
 
