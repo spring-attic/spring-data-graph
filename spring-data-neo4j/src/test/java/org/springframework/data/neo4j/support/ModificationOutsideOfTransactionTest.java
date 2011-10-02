@@ -165,7 +165,7 @@ public class ModificationOutsideOfTransactionTest
     }
 
 	@Test
-    public void shouldWorkWithUninitializedCollectionFieldWithoutUnderlyingState()
+    public void uninitializedCollectionFieldWithoutUnderlyingState()
     {
         Group group = new Group();
 	    Collection<Person> people = group.getPersons();
@@ -175,10 +175,14 @@ public class ModificationOutsideOfTransactionTest
 	    people.add(p);
 
         assertEquals( Collections.singleton(p), group.getPersons() );
+        
+        group.persist();
+		assertThat(group.getPersistentState(), hasRelationship("persons", p.getPersistentState()));
+		assertThat(p.getPersistentState(), hasRelationship("persons", group.getPersistentState()));
     }
 
 	@Test
-    public void shouldWorkWithInitializedCollectionFieldWithoutUnderlyingState()
+    public void initializedCollectionFieldWithoutUnderlyingState()
     {
         Group group = new Group();
 	    group.setPersons(new HashSet<Person>());
@@ -189,6 +193,10 @@ public class ModificationOutsideOfTransactionTest
 	    people.add(p);
 
         assertEquals( Collections.singleton(p), group.getPersons() );
+        
+        group.persist();
+		assertThat(group.getPersistentState(), hasRelationship("persons", p.getPersistentState()));
+		assertThat(p.getPersistentState(), hasRelationship("persons", group.getPersistentState()));
     }
 
     @Test
