@@ -25,7 +25,6 @@ import org.springframework.data.neo4j.mapping.Neo4JPersistentProperty;
 import org.springframework.data.neo4j.mapping.RelationshipInfo;
 import org.springframework.data.neo4j.support.GraphDatabaseContext;
 
-import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 

@@ -24,9 +24,7 @@ import org.springframework.data.neo4j.mapping.Neo4JPersistentProperty;
 import org.springframework.data.neo4j.mapping.RelationshipInfo;
 import org.springframework.data.neo4j.support.GraphDatabaseContext;
 
-import java.lang.reflect.Field;
-
-public class ReadOnlyOneToNRelationshipFieldAccessorFactory extends NodeRelationshipFieldAccessorFactory {
+public class ReadOnlyOneToNRelationshipFieldAccessorFactory<T extends NodeBacked, TARGET extends NodeBacked> extends NodeRelationshipFieldAccessorFactory<T, TARGET> {
 
 	public ReadOnlyOneToNRelationshipFieldAccessorFactory(GraphDatabaseContext graphDatabaseContext) {
 		super(graphDatabaseContext);
@@ -40,23 +38,24 @@ public class ReadOnlyOneToNRelationshipFieldAccessorFactory extends NodeRelation
 	}
 
 	@Override
-	public FieldAccessor<NodeBacked> forField(final Neo4JPersistentProperty property) {
+	public FieldAccessor<T> forField(final Neo4JPersistentProperty property) {
         final RelationshipInfo relationshipInfo = property.getRelationshipInfo();
-        return new ReadOnlyOneToNRelationshipFieldAccessor(relationshipInfo.getRelationshipType(), relationshipInfo.getDirection(), (Class<? extends NodeBacked>) property.getRelationshipInfo().getTargetType().getType(), graphDatabaseContext,property);
+        return new ReadOnlyOneToNRelationshipFieldAccessor<T, TARGET>(relationshipInfo.getRelationshipType(), relationshipInfo.getDirection(), (Class<TARGET>) property.getRelationshipInfo().getTargetType().getType(), graphDatabaseContext,property);
 	}
 
-	public static class ReadOnlyOneToNRelationshipFieldAccessor extends OneToNRelationshipFieldAccessorFactory.OneToNRelationshipFieldAccessor {
+	public static class ReadOnlyOneToNRelationshipFieldAccessor<T extends NodeBacked, TARGET extends NodeBacked> extends OneToNRelationshipFieldAccessorFactory.OneToNRelationshipFieldAccessor<T, TARGET> {
 
-		public ReadOnlyOneToNRelationshipFieldAccessor(final RelationshipType type, final Direction direction, final Class<? extends NodeBacked> elementClass, final GraphDatabaseContext graphDatabaseContext, Neo4JPersistentProperty field) {
+		public ReadOnlyOneToNRelationshipFieldAccessor(final RelationshipType type, final Direction direction, final Class<TARGET> elementClass, final GraphDatabaseContext graphDatabaseContext, Neo4JPersistentProperty field) {
 	        super(type,direction,elementClass, graphDatabaseContext, field);
 		}
 
 	    @Override
-	    public boolean isWriteable(NodeBacked nodeBacked) {
+	    public boolean isWriteable(T entity) {
 	        return false;
 	    }
 
-	    public Object setValue(final NodeBacked entity, final Object newVal) {
+	    @Override
+		public Object setValue(final T entity, final Object newVal) {
 			throw new InvalidDataAccessApiUsageException("Cannot set read-only relationship entity field.");
 		}
 

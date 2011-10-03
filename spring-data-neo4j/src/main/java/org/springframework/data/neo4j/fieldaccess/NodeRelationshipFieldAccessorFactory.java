@@ -16,21 +16,14 @@
 
 package org.springframework.data.neo4j.fieldaccess;
 
-import org.neo4j.graphdb.Direction;
-import org.neo4j.graphdb.DynamicRelationshipType;
-import org.springframework.data.neo4j.annotation.RelatedTo;
 import org.springframework.data.neo4j.core.NodeBacked;
-import org.springframework.data.neo4j.mapping.Neo4JPersistentProperty;
-import org.springframework.data.neo4j.support.GenericTypeExtractor;
 import org.springframework.data.neo4j.support.GraphDatabaseContext;
-
-import java.lang.reflect.Field;
 
 /**
  * @author Michael Hunger
  * @since 12.09.2010
  */
-public abstract class NodeRelationshipFieldAccessorFactory implements FieldAccessorFactory<NodeBacked> {
+public abstract class NodeRelationshipFieldAccessorFactory<T extends NodeBacked, TARGET extends NodeBacked> implements FieldAccessorFactory<T> {
 
     protected GraphDatabaseContext graphDatabaseContext;
     
