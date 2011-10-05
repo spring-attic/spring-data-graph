@@ -43,8 +43,8 @@ public class DetachedEntityState<ENTITY extends GraphBacked<STATE>, STATE> imple
     private final Map<Field, ExistingValue> dirty = new HashMap<Field, ExistingValue>();
     protected final EntityState<ENTITY,STATE> delegate;
     private final static Log log = LogFactory.getLog(DetachedEntityState.class);
-    private GraphDatabaseContext graphDatabaseContext;
-    private Neo4JPersistentEntity<ENTITY> persistentEntity;
+    private final GraphDatabaseContext graphDatabaseContext;
+    private final Neo4JPersistentEntity<ENTITY> persistentEntity;
 
     public DetachedEntityState(final EntityState<ENTITY, STATE> delegate, GraphDatabaseContext graphDatabaseContext) {
         this.delegate = delegate;
@@ -134,7 +134,13 @@ public class DetachedEntityState<ENTITY extends GraphBacked<STATE>, STATE> imple
     }
     @Override
     public Object setValue(final Field field, final Object newVal) {
-        return setValue(property(field),newVal);
+    	Neo4JPersistentProperty property = property(field);
+    	if (property == null) {
+    		// The property maybe null if it is a transient field
+    		return newVal;
+    	}
+    	
+        return setValue(property, newVal);
     }
 
     private Neo4JPersistentProperty property(Field field) {
@@ -146,7 +152,6 @@ public class DetachedEntityState<ENTITY extends GraphBacked<STATE>, STATE> imple
         if (isDetached()) {
             final Field field = property.getField();
             if (!isDirty(field) && isWritable(field)) {
-                Object existingValue;
                 if (hasPersistentState()) {
                     addDirty(field, unwrap(delegate.getValue(field)), true);
                 }
