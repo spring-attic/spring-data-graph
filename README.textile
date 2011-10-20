@@ -1,8 +1,7 @@
 h1. NOTICE: Deprecated
 
-This project has been deprecated, because the name has changed to Spring Data Neo4j. 
-All active development is continuing in a 
-fork at "Spring Data Neo4j":https://github.com/SpringSource/spring-data-neo4j .
+This project has been deprecated, because the name has changed from Spring Data Graph to Spring Data Neo4j. 
+All active development is continuing in the forked repository at "Spring Data Neo4j":https://github.com/SpringSource/spring-data-neo4j .
 
 This repository remains for continuity, but please join us at the new repository
 for the latest code and documentation.
