@@ -70,7 +70,13 @@ public class PropertyTest {
         p.getPersistentState().setProperty("personality", "EXTROVERT");
         assertEquals("Did not deserialize property value properly.", Personality.EXTROVERT, p.getPersonality());
     }
-
+    @Test
+    @Transactional
+    public void testSetTransientPropertyFieldInDetachedMode() {
+        Person p = new Person("Michael", 35);
+        p.setThought("food"); // caused a NullPointerException
+    }
+    
     @Test(expected = NotFoundException.class)
     @Transactional
     public void testSetTransientPropertyFieldNotManaged() {
