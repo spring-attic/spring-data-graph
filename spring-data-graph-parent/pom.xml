@@ -9,13 +9,13 @@
 	<packaging>pom</packaging>
     <description><![CDATA[Spring Data Graph parent project. Defines dependencies and common configuration for the build process.
     ]]></description>
-    <url>http://www.springsource.org/spring-data/neo4j</url>
+    <url>https://www.springsource.org/spring-data/neo4j</url>
     <organization>
     		<name>SpringSource</name>
-    		<url>http://www.springsource.com</url>
+    		<url>https://www.springsource.com</url>
     </organization>
     <scm>
-        <url>http://github.com/SpringSource/spring-data-graph</url>
+        <url>https://github.com/SpringSource/spring-data-graph</url>
         <connection>scm:git:git://github.com/SpringSource/spring-data-graph.git</connection>
         <developerConnection>scm:git:git://github.com/SpringSource/spring-data-graph.git</developerConnection>
     </scm>
@@ -26,8 +26,8 @@
 	<mailingLists>
 		<mailingList>
 			<name>Spring Batch Forum</name>
-			<post>http://forum.springsource.org/forumdisplay.php?f=80</post>
-			<archive>http://forum.springsource.org/forumdisplay.php?f=80</archive>
+			<post>http://forum.spring.io/forum/spring-projects/data/nosql</post>
+			<archive>http://forum.spring.io/forum/spring-projects/data/nosql</archive>
 		</mailingList>
 	</mailingLists>
 	<ciManagement>
@@ -41,7 +41,7 @@
 			<name>Thomas Risberg</name>
 			<email>trisberg at vmware.com</email>
 			<organization>SpringSource</organization>
-			<organizationUrl>http://www.SpringSource.com</organizationUrl>
+			<organizationUrl>https://www.SpringSource.com</organizationUrl>
 			<roles>
 				<role>Project Admin</role>
 			</roles>
@@ -52,7 +52,7 @@
 			<name>Mark Pollack</name>
 			<email>mpollack at vmware.com</email>
 			<organization>SpringSource</organization>
-			<organizationUrl>http://www.SpringSource.com</organizationUrl>
+			<organizationUrl>https://www.SpringSource.com</organizationUrl>
 			<roles>
 				<role>Project Admin</role>
 			</roles>
@@ -63,7 +63,7 @@
 			<name>Michael Hunger</name>
 			<email>michael.hunger at neotechnology.com</email>
 			<organization>Neo Technology</organization>
-			<organizationUrl>http://www.neotechnology.com</organizationUrl>
+			<organizationUrl>https://www.neotechnology.com</organizationUrl>
 			<roles>
 				<role>Project Admin</role>
 				<role>Developer</role>
@@ -75,7 +75,7 @@
 			<name>David Montag</name>
 			<email>david.montag at neotechnology.com</email>
 			<organization>Neo Technology</organization>
-			<organizationUrl>http://www.neotechnology.com</organizationUrl>
+			<organizationUrl>https://www.neotechnology.com</organizationUrl>
 			<roles>
 				<role>Developer</role>
 			</roles>
@@ -86,7 +86,7 @@
 			<name>Andres Taylor</name>
 			<email>andres at neotechnology.com</email>
 			<organization>Neo Technology</organization>
-			<organizationUrl>http://www.neotechnology.com</organizationUrl>
+			<organizationUrl>https://www.neotechnology.com</organizationUrl>
 			<roles>
 				<role>Developer</role>
 			</roles>
@@ -97,7 +97,7 @@
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
 			Copyright 2010 the original author or authors.
 
@@ -105,7 +105,7 @@
 			you may not use this file except in compliance with the License.
 			You may obtain a copy of the License at
 
-			     http://www.apache.org/licenses/LICENSE-2.0
+			     https://www.apache.org/licenses/LICENSE-2.0
 
 			Unless required by applicable law or agreed to in writing, software
 			distributed under the License is distributed on an "AS IS" BASIS,
@@ -200,7 +200,7 @@
 
     <distributionManagement>
         <!-- see 'staging' profile for dry-run deployment settings -->
-        <downloadUrl>http://www.springsource.com/download/community</downloadUrl>
+        <downloadUrl>https://www.springsource.com/download/community</downloadUrl>
         <site>
             <id>static.springframework.org</id>
             <url>
@@ -225,7 +225,7 @@
 			in order for them to show up on the classpath, but metadata like
 			<version> and <scope> are inherited, which cuts down on verbosity.
 			see
-			http://www.sonatype.com/books/mvnref-book/reference/pom-relationships-sect-dep-manage.html
+			https://www.sonatype.com/books/mvnref-book/reference/pom-relationships-sect-dep-manage.html
 		-->
 		<dependencies>
 
@@ -599,7 +599,7 @@
                             all modules that wish to use bundlor must declare it explicitly.
                             it is not necessary to specify the <version> or <configuration>
                             sections, but groupId and artifactId are required. see
-                            http://static.springsource.org/s2-bundlor/1.0.x/user-guide/html/ch04s03.html
+                            https://docs.spring.io/s2-bundlor/1.0.x/user-guide/html/ch04s03.html
                             for more info
                         -->
                         <groupId>com.springsource.bundlor</groupId>
@@ -624,39 +624,39 @@
 			<!-- necessary for utils -->
             <id>repository.springsource.maven.bundles.release</id>
 			<name>SpringSource Maven Repository</name>
-			<url>http://repository.springsource.com/maven/bundles/release</url>
+			<url>https://repository.springsource.com/maven/bundles/release</url>
 		</pluginRepository>
 		<pluginRepository>
 			<id>repository.springframework.maven.milestone</id>
 			<name>Spring Framework Maven Milestone Repository</name>
-			<url>http://maven.springframework.org/milestone</url>
+			<url>https://maven.springframework.org/milestone</url>
 		</pluginRepository>
 		<pluginRepository>
 			<id>repository.springframework.maven.release</id>
 			<name>Spring Framework Maven Release Repository</name>
-			<url>http://maven.springframework.org/release</url>
+			<url>https://maven.springframework.org/release</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<repositories>
         <repository>
             <id>jboss-repository</id>
             <name>JBoss Public Repository</name>
-            <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+            <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
         </repository>
 		<repository>
 			<id>repository.springframework.maven.release</id>
 			<name>Spring Framework Maven Release Repository</name>
-			<url>http://maven.springframework.org/release</url>
+			<url>https://maven.springframework.org/release</url>
 		</repository>
 		<repository>
 			<id>repository.springframework.maven.milestone</id>
 			<name>Spring Framework Maven Milestone Repository</name>
-			<url>http://maven.springframework.org/milestone</url>
+			<url>https://maven.springframework.org/milestone</url>
 		</repository>
 		<repository>
 			<id>repository.springframework.maven.snapshot</id>
 			<name>Spring Framework Maven Snapshot Repository</name>
-			<url>http://maven.springframework.org/snapshot</url>
+			<url>https://maven.springframework.org/snapshot</url>
 		</repository>
 	</repositories>
 	<reporting>
@@ -665,7 +665,7 @@
 				<!--
 					significantly speeds up the 'Dependencies' report during site
 					creation see
-					http://old.nabble.com/Skipping-dependency-report-during-Maven2-site-generation-td20116761.html
+					https://old.nabble.com/Skipping-dependency-report-during-Maven2-site-generation-td20116761.html
 				-->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
