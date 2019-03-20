@@ -75,11 +75,11 @@
     <!-- let's have a Spring and SpringSource banner across the top of each page -->
     <xsl:template name="user.header.navigation">
         <div style="background-color:white;border:none;height:73px;border:1px solid black;">
-            <a style="border:none;" href="http://static.springframework.org/spring-ws/site/"
+            <a style="border:none;" href="https://docs.spring.io/spring-ws/site/"
                title="The Spring Framework - Spring Web Services">
                 <img style="border:none;" src="images/xdev-spring_logo.jpg"/>
             </a>
-            <a style="border:none;" href="http://www.springsource.com/" title="SpringSource">
+            <a style="border:none;" href="https://www.springsource.com/" title="SpringSource">
                 <img style="border:none;position:absolute;padding-top:5px;right:42px;" src="images/s2_box_logo.png"/>
             </a>
         </div>
@@ -189,7 +189,7 @@
                                 </td>
                                 <td width="20%" align="center">
                                     <span style="color:white;font-size:90%;">
-                                        <a href="http://www.springsource.com/"
+                                        <a href="https://www.springsource.com/"
                                            title="SpringSource">Sponsored by SpringSource
                                         </a>
                                     </span>

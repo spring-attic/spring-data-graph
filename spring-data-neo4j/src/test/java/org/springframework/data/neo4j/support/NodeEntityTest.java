@@ -103,7 +103,7 @@ import static org.springframework.data.neo4j.Person.persistedPerson;
         group.setName("developers");
         assertEquals("developers", group.getPersistentState().getProperty("name"));
     }
-    // own transaction handling because of http://wiki.neo4j.org/content/Delete_Semantics
+    // own transaction handling because of https://neo4j.com/docs/
     @Test(expected = NotFoundException.class)
     public void testDeleteEntityFromGDC() {
         Transaction tx = graphDatabaseContext.beginTx();
