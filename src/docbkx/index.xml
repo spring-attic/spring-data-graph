@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <book xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <!-- TODO
@@ -72,7 +72,7 @@
                 The tutorial takes the reader through the steps necessary to create the application.
                 It provides the configuration and code examples that are needed to understand what's
                 happening in Spring Data Graph. The complete source code for the app is available on
-                <ulink url="http://github.com/jexp/cineasts">Github</ulink>.
+                <ulink url="https://github.com/jexp/cineasts">Github</ulink>.
             </para>
         </partintro>
 

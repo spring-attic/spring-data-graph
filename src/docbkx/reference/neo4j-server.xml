@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <chapter id="reference:neo4j-server">
     <title>Neo4j Server</title>
     <para>
@@ -19,13 +19,13 @@
         <para>
             The Neo4j Server has two built-in extension mechanisms. It is possible to extend existing URI endpoints
             like the graph database, nodes, or relationships, adding new URIs or methods to those. This is achieved
-            by writing a <ulink url="http://docs.neo4j.org/chunked/milestone/server-plugins.html">server plugin</ulink>.
+            by writing a <ulink url="https://docs.neo4j.org/chunked/milestone/server-plugins.html">server plugin</ulink>.
             This plugin type has some restrictions though.
         </para>
         <para>
             For complete freedom in the implementation, an
-            <ulink url="http://docs.neo4j.org/chunked/milestone/server-unmanaged-extensions.html">unmanaged extension</ulink>
-            can be used. Unmanaged extensions are essentially <ulink url="http://jersey.java.net/">Jersey</ulink>
+            <ulink url="https://docs.neo4j.org/chunked/milestone/server-unmanaged-extensions.html">unmanaged extension</ulink>
+            can be used. Unmanaged extensions are essentially <ulink url="https://jersey.java.net/">Jersey</ulink>
             resource implementations. The resource constructors or methods can get the
             <code>GraphDatabaseService</code> injected to execute the necessary operations and return appropriate
             <code>Representations</code>.
