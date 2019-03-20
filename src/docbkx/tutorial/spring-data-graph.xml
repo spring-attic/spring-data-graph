@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.docbook.org/xml/4.4/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.docbook.org/xml/4.4/docbookx.dtd">
 <chapter id="tutorial_about-spring-data">
     <title>Spring Data Graph</title>
     <subtitle>Conjuring magic</subtitle>
@@ -86,7 +86,7 @@
             <programlisting language="xml"><![CDATA[<beans xmlns="http://www.springframework.org/schema/beans" ...
        xmlns:datagraph="http://www.springframework.org/schema/data/graph"
        xsi:schemaLocation="... http://www.springframework.org/schema/data/graph
-       http://www.springframework.org/schema/data/graph/datagraph-1.0.xsd">
+       https://www.springframework.org/schema/data/graph/datagraph-1.0.xsd">
     ...
     <datagraph:config storeDirectory="data/graph.db"/>
     ...

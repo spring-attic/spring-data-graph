@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <chapter id="setup">
 	<title>Environment setup</title>
 	<para>
@@ -8,7 +8,7 @@
         and configure the AspectJ weaving. After the build setup is complete, the Spring application needs to be
         configured to make use of Spring Data Graph.
 		<!--Examples for this setup can be found in the -->
-        <!--<ulink url="http://github.com/SpringSource/spring-data-graph-examples">Spring Data Graph examples</ulink>.-->
+        <!--<ulink url="https://github.com/SpringSource/spring-data-graph-examples">Spring Data Graph examples</ulink>.-->
     </para>
     <para>
         Spring Data Graph projects can be built using maven, we also added means to build them with gradle and ant/ivy.
@@ -38,7 +38,7 @@ configurations {
 repositories {
     mavenCentral()
 	mavenLocal()
-	mavenRepo urls: "http://maven.springframework.org/release"
+	mavenRepo urls: "https://maven.springframework.org/release"
 }]]></programlisting>
         </example>
         <para>
@@ -88,7 +88,7 @@ repositories {
                 <programlisting language="xml"><![CDATA[<repository>
     <id>spring-maven-milestone</id>
     <name>Springframework Maven Repository</name>
-    <url>http://maven.springframework.org/milestone</url>
+    <url>https://maven.springframework.org/milestone</url>
 </repository>
 ]]></programlisting>
             </example>
@@ -200,11 +200,11 @@ repositories {
         xmlns:datagraph="http://www.springframework.org/schema/data/graph"
         xsi:schemaLocation="
             http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
             http://www.springframework.org/schema/context
-            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            https://www.springframework.org/schema/context/spring-context-3.0.xsd
             http://www.springframework.org/schema/data/graph
-            http://www.springframework.org/schema/data/graph/datagraph-1.0.xsd">
+            https://www.springframework.org/schema/data/graph/datagraph-1.0.xsd">
 
     <context:annotation-config/>
     <datagraph:config storeDirectory="target/config-test"/>
@@ -248,9 +248,9 @@ repositories {
                 <para>
                     For those not familiar with Java-based bean metadata in Spring, we recommend that you
                     read up on it first. The Spring documentation has a
-                    <ulink url="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/new-in-3.html#new-java-configuration" userlevel="">high-level introduction</ulink>
+                    <ulink url="https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/new-in-3.html#new-java-configuration" userlevel="">high-level introduction</ulink>
                     as well as
-                    <ulink url="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/beans.html#beans-java-instantiating-container">detailed documentation</ulink>
+                    <ulink url="https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/beans.html#beans-java-instantiating-container">detailed documentation</ulink>
                     on it.
                 </para>
             </note>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.docbook.org/xml/4.4/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.docbook.org/xml/4.4/docbookx.dtd">
 <chapter id="tutorial_annotations">
     <title>Annotating the domain</title>
     <subtitle>Decorations</subtitle>
     <para>
         Looking at the Spring Data Graph documentation, we found a simple
-        <ulink url="http://github.com/SpringSource/spring-data-graph-examples/tree/master/hello-worlds">Hello World example</ulink>
+        <ulink url="https://github.com/SpringSource/spring-data-graph-examples/tree/master/hello-worlds">Hello World example</ulink>
         and tried to understand it. The entity classes were annotated with <code>@NodeEntity</code>.
         That was simple, so we added the annotation to our domain classes too. Entity classes representing
         relationships were instead annotated with <code>@RelationshipEntity</code>.

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.docbook.org/xml/4.4/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.docbook.org/xml/4.4/docbookx.dtd">
 <chapter id="tutorial_neo4j">
     <title>Learning Neo4j</title>
     <subtitle>Graphs ahead</subtitle>
     <para>
         Now we needed to figure out how to store our chosen domain model in the chosen database.
         First we read up about graph databases, in particular our chosen one,
-        <ulink url="http://neo4j.org">Neo4j</ulink>.
+        <ulink url="https://neo4j.com">Neo4j</ulink>.
         The Neo4j data model consists of nodes and relationships, both of which can have key/value-style
         properties. Relationships are first-class citizens in Neo4j, meaning we can link together nodes
         into semantically rich networks. This really appealed to us. Then we found that we were also able to
-        <ulink url="http://docs.neo4j.org/chunked/snapshot/indexing.html">index nodes and relationships</ulink>
+        <ulink url="https://docs.neo4j.org/chunked/snapshot/indexing.html">index nodes and relationships</ulink>
         by {key, value} pairs. We also found that we could traverse relationships both imperatively using
         the core API, and declaratively using a query-like
-        <ulink url="http://wiki.neo4j.org/content/Traversal_Framework">Traversal Description</ulink>.
+        <ulink url="https://neo4j.com/docs/">Traversal Description</ulink>.
     </para>
     <para>
-        We also learned that Neo4j is fully transactional and therefore upholds <ulink url="http://en.wikipedia.org/wiki/ACID">ACID</ulink> guarantees for our data.
+        We also learned that Neo4j is fully transactional and therefore upholds <ulink url="https://en.wikipedia.org/wiki/ACID">ACID</ulink> guarantees for our data.
         This is unusual for NOSQL databases, but easier for us to get our head around than non-transactional
         eventual consistency. It also made us feel safe, though it also meant that we had to manage transactions.
         Something to keep in mind for later.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
-                 "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+                 "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <chapter id="reference:samples">
     <title>Sample code</title>
 
@@ -8,7 +8,7 @@
         <title>Introduction</title>
         <para>
             Spring Data Graph comes with a number of sample applications. The source code of the samples can be found on
-            <ulink url="http://github.com/SpringSource/spring-data-graph-examples">Github</ulink>. The different sample
+            <ulink url="https://github.com/SpringSource/spring-data-graph-examples">Github</ulink>. The different sample
             projects are introduced below.
         </para>
     </section>
@@ -40,7 +40,7 @@
             The IMDB sample is a web application that imports datasets from the Internet Movie Database (IMDB)
             into the graph database. It allows the listing of movies with their actors, and of actors and their
             roles in different movies. It also uses graph traversal operations to calculate the
-            <ulink url="http://en.wikipedia.org/wiki/Bacon_number">Bacon number</ulink> of any given actor.
+            <ulink url="https://en.wikipedia.org/wiki/Bacon_number">Bacon number</ulink> of any given actor.
             This sample application shows the usage of Spring Data Graph in a more complex setting, using several
             annotated entities and relationships as well as indexes and graph traversals.
         </para>

@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 	<parent>
     <groupId>org.springframework.data</groupId>
@@ -12,7 +12,7 @@
     <name>Spring Data Graph REST Wrapper</name>
     <description><![CDATA[Spring Data Graph Wrapper for the Neo4j REST API, provides a Graph Database proxy for the remote invocation.
     ]]></description>
-    <url>http://www.springsource.org/spring-data/neo4j</url>
+    <url>https://www.springsource.org/spring-data/neo4j</url>
     <properties>
         <jersey.version>1.4</jersey.version>
     </properties>
@@ -20,11 +20,11 @@
     <repositories>
         <repository>
             <id>neo4j</id>
-            <url>http://m2.neo4j.org</url>
+            <url>https://m2.neo4j.org</url>
         </repository>
         <repository>
             <id>Sun</id>
-            <url>http://download.java.net/maven/2</url>
+            <url>https://download.java.net/maven/2</url>
         </repository>
     </repositories>
     <dependencies>

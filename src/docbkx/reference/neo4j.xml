@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <chapter id="neo4j">
 	<title>Introduction to Neo4j</title>
 
@@ -22,7 +22,7 @@
     <section>
         <title>About Neo4j</title>
         <para>
-            <ulink url="http://neo4j.org/">Neo4j</ulink> is a graph database. It is a fully transactional database
+            <ulink url="https://neo4j.com">Neo4j</ulink> is a graph database. It is a fully transactional database
             (ACID) that stores data structured as graphs. A graph consists of nodes, connected by relationships.
             Inspired by the structure of the human brain, it allows for high query performance on complex data,
             while remaining intuitive and simple for the developer.
@@ -33,7 +33,7 @@
             <itemizedlist>
             <listitem>has an intuitive graph-oriented model for data representation. Instead of tables, rows,
                 and columns, you work with a graph consisting of
-                <ulink url="http://wiki.neo4j.org/content/Getting_Started">nodes, relationships, and properties</ulink>.
+                <ulink url="https://neo4j.com/docs/">nodes, relationships, and properties</ulink>.
             </listitem>
             <listitem>has a disk-based, native storage manager optimized for storing graph structures
                 with maximum performance and scalability.
@@ -46,7 +46,7 @@
             <listitem>can be deployed as a standalone server or an embedded database with a very small
                 distribution footprint (~700k jar).
             </listitem>
-            <listitem>has a Java <ulink url="http://api.neo4j.org/">API</ulink>.
+            <listitem>has a Java <ulink url="https://neo4j.com/api_docs/">API</ulink>.
             </listitem>
             </itemizedlist>
         </para>
@@ -67,7 +67,7 @@
 			The <code>EmbeddedGraphDatabase</code> is an implementation of GraphDatabaseService that is used to
             embed Neo4j in a Java application.  This implementation is used so as to provide the highest
             and tightest integration with the database. Besides the embedded mode, the
-            <ulink url="http://wiki.neo4j.org/content/Getting_Started_With_Neo4j_Server">Neo4j server</ulink>
+            <ulink url="https://neo4j.com/docs/">Neo4j server</ulink>
             provides access to the graph database via an HTTP-based REST API.</para>
 	</section>
 	<section>
@@ -157,10 +157,10 @@ for (Node foundNode : nodeIndex.get("property","value")) {
         <title>Querying with Cypher</title>
         <para>
             With version 1.4.M04 Neo4j introduced a textual query language called
-            <ulink url="http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html">"Cypher"</ulink> which draws from many
+            <ulink url="https://docs.neo4j.org/chunked/milestone/cypher-query-lang.html">"Cypher"</ulink> which draws from many
             sources. From graph matching like in SPARQL, some keywords and query structure that reminds of SQL and
             some iconic representation. A screencast presenting cypher queries on the cineasts.net dataset is available
-            at <ulink url="http://video.neo4j.org/U2Y/introduction-to-cypher">video.neo4j.org</ulink>. Cypher was written
+            at <ulink url="https://video.neo4j.org/U2Y/introduction-to-cypher">video.neo4j.org</ulink>. Cypher was written
             in Scala to leverage the high expressiveness for lazy sequence operations of the language and the great
             parser combinator library.
         </para>
@@ -212,8 +212,8 @@ start user=(User,login,'micha') match (user)-[:FRIEND]-(friend)-[r,:RATED]->(mov
     <section>
         <title>Gremlin a Graph Traversal DSL</title>
         <para>
-            Gremlin is an expressive Groovy DSL developed by <ulink url="http://markorodriguez.com">Marko Rodriguez</ulink>
-            as part of the <ulink url="http://tinkerpop.com">tinkerpop</ulink> stack. It builds on top of a pipe implementation
+            Gremlin is an expressive Groovy DSL developed by <ulink url="https://markorodriguez.com">Marko Rodriguez</ulink>
+            as part of the <ulink url="https://tinkerpop.apache.org">tinkerpop</ulink> stack. It builds on top of a pipe implementation
             (Blueprints Pipes) that uses connected operations to traverse a graph. Gremlin has a concise syntax but is
             turing complete.
         </para>

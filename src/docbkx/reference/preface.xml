@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE preface PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
-"http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+"https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <preface id="reference:preface">
     <title>Reference Documentation</title>
     <section>
         <title>Spring Data and Spring Data Graph</title>
 
         <para>
-            <ulink url="http://springsource.org/spring-data">Spring Data</ulink> is a SpringSource project that aims to
+            <ulink url="https://springsource.org/spring-data">Spring Data</ulink> is a SpringSource project that aims to
             provide Spring's convenient programming model and well known conventions for NOSQL databases. Currently there
             is support for graph (Neo4j), key-value (Redis, Riak), document (MongoDB) and relational (Oracle)
             databases. Mark Pollack, the author of Spring.NET, is the project lead for the Spring Data project.
@@ -26,8 +26,8 @@
         </para>
         <para>
             For Integration of Neo4j and Grails/GORM please refer to the Neo4j
-            <ulink url="http://www.grails.org/plugin/neo4j">grails plugin</ulink>. For other language bindings or frameworks
-            visit the <ulink url="http://wiki.neo4j.org/content/Main_Page#Language_and_framework_bindings">Neo4j Wiki</ulink>.
+            <ulink url="https://www.grails.org/plugin/neo4j">grails plugin</ulink>. For other language bindings or frameworks
+            visit the <ulink url="https://neo4j.com/docs/#Language_and_framework_bindings">Neo4j Wiki</ulink>.
         </para>
     </section>
     <section>
@@ -115,7 +115,7 @@
         the slightly different behavior and setup of a Graph-JPA interaction are described.
     </para>
     <para>
-        The provided samples, which are also publicly hosted on <ulink url="http://github.com/springsource/spring-data-graph-examples">github</ulink> are explained in
+        The provided samples, which are also publicly hosted on <ulink url="https://github.com/springsource/spring-data-graph-examples">github</ulink> are explained in
         <xref linkend="reference:samples"/>.
     </para>
     <para>

@@ -5,7 +5,7 @@
 		 standalone use.
 		 see pom.xml 'maven-assembly-plugin' declaration
 		 see src/main/scripts/build-distribution.sh
-		 see http://www.sonatype.com/books/mvnref-book/reference/assemblies-set-dist-assemblies.html -->
+		 see https://www.sonatype.com/books/mvnref-book/reference/assemblies-set-dist-assemblies.html -->
 	<id>distribution</id>
 	<formats>
 		<format>zip</format>

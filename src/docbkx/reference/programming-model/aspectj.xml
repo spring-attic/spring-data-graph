@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <section id="reference:aspectj">
     <title>AspectJ support</title>
     <para>
-        Behind the scenes, Spring Data Graph leverages <ulink url="http://www.eclipse.org/aspectj/">AspectJ</ulink>
+        Behind the scenes, Spring Data Graph leverages <ulink url="https://www.eclipse.org/aspectj/">AspectJ</ulink>
         aspects to modify the behavior of simple annotated POJO entities
         (see <xref linkend="reference:aspectj-details"/>). Each node entity is backed by a graph node that holds its
         properties and relationships to other entities. AspectJ is used for intercepting field access, so that
@@ -40,9 +40,9 @@
         </para>
         <para>
             Eclipse and STS support AspectJ via the AJDT plugin which can be installed from the update-site:
-            <ulink url="http://download.eclipse.org/tools/ajdt/36/update/">http://download.eclipse.org/tools/ajdt/36/update/</ulink>
+            <ulink url="https://download.eclipse.org/tools/ajdt/36/update/">https://download.eclipse.org/tools/ajdt/36/update/</ulink>
             (it might be necessary to use the latest development snapshot of the plugin
-            <ulink url="http://download.eclipse.org/tools/ajdt/36/dev/update">http://download.eclipse.org/tools/ajdt/36/dev/update</ulink>).
+            <ulink url="https://download.eclipse.org/tools/ajdt/36/dev/update">https://download.eclipse.org/tools/ajdt/36/dev/update</ulink>).
             The current version that does not show incorrect errors is AspectJ 1.6.12.M1 (included in STS 2.7.0.M2), previous versions are reported
             to mislead the user.
         </para>

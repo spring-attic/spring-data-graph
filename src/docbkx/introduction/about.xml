@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE preface PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
-                 "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+                 "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
     <preface>
     <title>About this guide book</title>
     <section>
@@ -8,10 +8,10 @@
         <para>
             Welcome to the Spring Data Graph Guide Book. Thank you for taking the time to get an in depth look
             into <ulink url="https://github.com/SpringSource/spring-data-graph">Spring Data Graph</ulink>.
-            This project is part of the <ulink url="http://springsource.org/spring-data">Spring Data project</ulink>,
+            This project is part of the <ulink url="https://springsource.org/spring-data">Spring Data project</ulink>,
             which brings the convenient programming model of the Spring Framework to modern NOSQL databases.
      		Spring Data Graph, as the name alludes to, aims to provide support for graph databases. It currently
-            supports <ulink url="http://neo4j.org">Neo4j</ulink>.
+            supports <ulink url="https://neo4j.com">Neo4j</ulink>.
         </para>
     </section>
     <section>
@@ -23,14 +23,14 @@
         <para>
             If you have any feedback on Spring Data Graph or this book, please provide it via the
             <ulink url="https://jira.springsource.org/browse/DATAGRAPH">SpringSource JIRA</ulink>, the
-            <ulink url="http://forum.springsource.org/forumdisplay.php?f=80">SpringSource NOSQL Forum</ulink>,
+            <ulink url="https://forum.spring.io/forumdisplay.php?f=80">SpringSource NOSQL Forum</ulink>,
             <ulink url="https://github.com/SpringSource/spring-data-graph/issues">github comments or issues</ulink>,
-            or the <ulink url="http://neo4j.org/community/list/">Neo4j mailing list</ulink>.
+            or the <ulink url="https://neo4j.com/community/list/">Neo4j mailing list</ulink>.
         </para>
     </section>
     <section><title>Format of the Book</title>
         <para>
-            This book is presented as a <ulink url="http://martinfowler.com/bliki/DuplexBook.html">duplex book</ulink>,
+            This book is presented as a <ulink url="https://martinfowler.com/bliki/DuplexBook.html">duplex book</ulink>,
             a term coined by Martin Fowler. A duplex book consists of at least two parts. The first part is an easily
             accessible tutorial that gives the reader an overview of the topics contained in the book. It contains lots
             of examples and discussion topics. This part of the book is highly suited for cover-to-cover reading.

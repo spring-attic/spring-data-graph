@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "https://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <section id="reference:programming-model:indexing">
     <title>Indexing</title>
 
@@ -73,7 +73,7 @@ for (Person middleAgedDeveloper : graphRepository.findAllByRange("age", 20, 40))
             Access to the fulltext index is provided by the <code>findAllByQuery()</code> repository method.
             Wildcards like <code>*</code> are allowed. Generally though, the fulltext querying rules of the
             underlying index provider apply. See the
-            <ulink url="http://lucene.apache.org/java/3_0_1/">Lucene documentation</ulink> for more
+            <ulink url="https://lucene.apache.org/java/3_0_1/">Lucene documentation</ulink> for more
             information on this.
         </para>
         <para>
