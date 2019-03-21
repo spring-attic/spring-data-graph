@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -38,12 +38,12 @@ import org.springframework.data.neo4j.fieldaccess.DynamicPropertiesFieldAccessor
  * Person p = new Person();
  * p.persist();
  * p.personalProperties.setProperty(&quot;ZIP&quot;, 8000);
- * p.personalProperties.setProperty(&quot;City&quot;, &quot;Zürich&quot;);
+ * p.personalProperties.setProperty(&quot;City&quot;, &quot;Zï¿½rich&quot;);
  * </pre>
  * results in a node with the properties:
  * <pre>
  * "personalProperties-ZIP" => 8000
- * "personalProperties-City" => "Zürich"
+ * "personalProperties-City" => "Zï¿½rich"
  * </pre>
  */
 public interface DynamicProperties {
